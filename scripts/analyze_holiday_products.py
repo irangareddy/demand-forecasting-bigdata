@@ -1,7 +1,7 @@
 import os
 import logging
 from pyspark.sql import SparkSession
-from pyspark.sql.functions import col, date_format, to_date, sum as spark_sum
+from pyspark.sql.functions import col, date_format, to_date, sum as spark_sum, concat_ws
 
 # ─────── LOGGING SETUP ───────
 LOG_DIR = "logs"
@@ -31,15 +31,27 @@ df = df.withColumn("TotalPrice", col("Quantity") * col("Price"))
 
 log.info(f"Loaded {df.count()} transaction rows")
 
-# ─────── LOAD HOLIDAY MONTHS ───────
+from pyspark.sql.functions import concat_ws
+
+# ─────── LOAD & FORMAT HOLIDAY DATA ───────
 holidays = spark.read.option("header", "true").csv(
     "data/public_holidays_uk_2009_2011.csv", inferSchema=True
 )
-holidays = holidays.withColumn("Date", to_date(col("Date"), "yyyy-MM-dd"))
-holidays = holidays.withColumn("holiday_month", date_format(col("Date"), "yyyy-MM"))
 
-holiday_months = holidays.select("holiday_month").distinct()
+# Reconstruct full date from year + month/day text
+holidays = holidays.withColumn("DateString", concat_ws(" ", col("Year"), col("Date")))
+holidays = holidays.withColumn("DateParsed", to_date(col("DateString"), "yyyy MMM d"))
+holidays = holidays.withColumn(
+    "holiday_month", date_format(col("DateParsed"), "yyyy-MM")
+)
+
+# Select distinct months (filtering any nulls)
+holiday_months = (
+    holidays.select("holiday_month").distinct().filter(col("holiday_month").isNotNull())
+)
+
 log.info(f"Detected {holiday_months.count()} unique holiday months")
+
 
 # ─────── FILTER FOR HOLIDAY MONTHS ───────
 df_holiday = df.join(
@@ -59,8 +71,9 @@ top_holiday_products = (
 )
 
 output_path = "output/seasonality/top_holiday_products"
-top_holiday_products.coalesce(1).write.option("header", "true").csv(
-    output_path, mode="overwrite"
-)
+top_holiday_products.coalesce(1).write.option("header", "true").option(
+    "quote", '"'
+).option("escape", '"').option("multiLine", False).csv(output_path, mode="overwrite")
+
 
 log.info(f"✅ Top holiday products written to: {output_path}")

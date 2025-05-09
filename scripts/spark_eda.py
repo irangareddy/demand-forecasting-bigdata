@@ -1,7 +1,7 @@
 import os
 import logging
 from pyspark.sql import SparkSession
-from pyspark.sql.functions import col, to_date, year, month, sum as spark_sum, expr
+from pyspark.sql.functions import col, to_date, sum as spark_sum, expr
 from pyspark.sql.types import FloatType
 
 # ─────── LOGGING SETUP ───────
@@ -53,7 +53,7 @@ top_products = (
     df_clean.groupBy("Description")
     .agg(spark_sum("TotalPrice").alias("Revenue"))
     .orderBy(col("Revenue").desc())
-    .limit(10)
+    .limit(1000)
     .select("Description")
 )
 

@@ -69,6 +69,8 @@ holidays.select("Date", "DateParsed", "holiday_month", "Name").show(5, truncate=
 
 holiday_months = holidays.select("holiday_month").distinct()
 
+df = df.withColumn("sales_delta", col("TotalPrice") - col("rolling_3m_avg"))
+
 # ─────── JOIN HOLIDAY MONTHS ───────
 features = df.withColumn("InvoiceMonthYM", date_format(col("InvoiceMonth"), "yyyy-MM"))
 features = (
@@ -84,3 +86,19 @@ features = (
 output_path = "output/features"
 features.coalesce(1).write.option("header", "true").csv(output_path, mode="overwrite")
 log.info(f"✅ Feature set (with holiday flags) written to: {output_path}")
+
+from pyspark.sql.functions import when
+
+# ─────── STOCK DECISION LABEL ───────
+features = features.withColumn("sales_delta", col("TotalPrice") - col("rolling_3m_avg"))
+features = features.withColumn(
+    "stock_decision",
+    when(col("TotalPrice") > col("rolling_3m_avg") * 1.2, "Increase")
+    .when(col("TotalPrice") < col("rolling_3m_avg") * 0.8, "Reduce")
+    .otherwise("Maintain"),
+)
+
+# ─────── WRITE EXTENDED FEATURES ───────
+output_path = "output/features_with_labels"
+features.coalesce(1).write.option("header", "true").csv(output_path, mode="overwrite")
+log.info(f"✅ Feature set with labels written to: {output_path}")

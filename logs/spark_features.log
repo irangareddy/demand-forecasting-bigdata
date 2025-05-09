@@ -52,3 +52,57 @@
 2025-05-09 06:54:39,869 — INFO — Loaded aggregated data with 200 rows
 2025-05-09 06:54:40,575 — INFO — ✅ Feature set (with holiday flags) written to: output/features
 2025-05-09 06:54:40,575 — INFO — Closing down clientserver connection
+2025-05-09 08:23:04,997 — INFO — Starting Spark feature engineering script
+2025-05-09 08:23:06,839 — INFO — Spark session started
+2025-05-09 08:23:08,800 — INFO — Loaded aggregated data with 200 rows
+2025-05-09 08:23:09,518 — INFO — ✅ Feature set (with holiday flags) written to: output/features
+2025-05-09 08:23:09,728 — INFO — ✅ Feature set with labels written to: output/features_with_labels
+2025-05-09 08:23:09,728 — INFO — Closing down clientserver connection
+2025-05-09 08:34:01,640 — INFO — Starting Spark feature engineering script
+2025-05-09 08:34:02,945 — INFO — Spark session started
+2025-05-09 08:34:04,822 — INFO — Loaded aggregated data with 200 rows
+2025-05-09 08:34:05,498 — INFO — ✅ Feature set (with holiday flags) written to: output/features
+2025-05-09 08:34:05,723 — INFO — ✅ Feature set with labels written to: output/features_with_labels
+2025-05-09 08:34:05,723 — INFO — Closing down clientserver connection
+2025-05-09 08:35:56,784 — INFO — Starting Spark feature engineering script
+2025-05-09 08:35:58,060 — INFO — Spark session started
+2025-05-09 08:35:59,938 — INFO — Loaded aggregated data with 17573 rows
+2025-05-09 08:36:00,731 — INFO — ✅ Feature set (with holiday flags) written to: output/features
+2025-05-09 08:36:00,971 — INFO — ✅ Feature set with labels written to: output/features_with_labels
+2025-05-09 08:36:00,971 — INFO — Closing down clientserver connection
+2025-05-09 08:39:43,377 — INFO — Starting Spark feature engineering script
+2025-05-09 08:39:44,657 — INFO — Spark session started
+2025-05-09 08:39:46,566 — INFO — Loaded aggregated data with 17573 rows
+2025-05-09 08:39:47,417 — INFO — ✅ Feature set (with holiday flags) written to: output/features
+2025-05-09 08:39:47,649 — INFO — ✅ Feature set with labels written to: output/features_with_labels
+2025-05-09 08:39:47,650 — INFO — Closing down clientserver connection
+2025-05-09 08:40:56,075 — INFO — Starting Spark feature engineering script
+2025-05-09 08:40:57,363 — INFO — Spark session started
+2025-05-09 08:40:59,363 — INFO — Loaded aggregated data with 17573 rows
+2025-05-09 08:41:00,186 — INFO — ✅ Feature set (with holiday flags) written to: output/features
+2025-05-09 08:41:00,419 — INFO — ✅ Feature set with labels written to: output/features_with_labels
+2025-05-09 08:41:00,421 — INFO — Closing down clientserver connection
+2025-05-09 08:43:44,455 — INFO — Starting Spark feature engineering script
+2025-05-09 08:43:45,740 — INFO — Spark session started
+2025-05-09 08:43:47,619 — INFO — Loaded aggregated data with 17573 rows
+2025-05-09 08:43:48,430 — INFO — ✅ Feature set (with holiday flags) written to: output/features
+2025-05-09 08:43:48,653 — INFO — ✅ Feature set with labels written to: output/features_with_labels
+2025-05-09 08:43:48,654 — INFO — Closing down clientserver connection
+2025-05-09 08:58:04,705 — INFO — Starting Spark feature engineering script
+2025-05-09 08:58:05,991 — INFO — Spark session started
+2025-05-09 08:58:07,902 — INFO — Loaded aggregated data with 17573 rows
+2025-05-09 08:58:08,681 — INFO — ✅ Feature set (with holiday flags) written to: output/features
+2025-05-09 08:58:08,927 — INFO — ✅ Feature set with labels written to: output/features_with_labels
+2025-05-09 08:58:08,927 — INFO — Closing down clientserver connection
+2025-05-09 10:02:00,641 — INFO — Starting Spark feature engineering script
+2025-05-09 10:02:01,916 — INFO — Spark session started
+2025-05-09 10:02:03,752 — INFO — Loaded aggregated data with 17573 rows
+2025-05-09 10:02:04,630 — INFO — ✅ Feature set (with holiday flags) written to: output/features
+2025-05-09 10:02:04,878 — INFO — ✅ Feature set with labels written to: output/features_with_labels
+2025-05-09 10:02:04,878 — INFO — Closing down clientserver connection
+2025-05-09 10:20:56,773 — INFO — Starting Spark feature engineering script
+2025-05-09 10:20:58,049 — INFO — Spark session started
+2025-05-09 10:20:59,898 — INFO — Loaded aggregated data with 17573 rows
+2025-05-09 10:21:00,788 — INFO — ✅ Feature set (with holiday flags) written to: output/features
+2025-05-09 10:21:01,033 — INFO — ✅ Feature set with labels written to: output/features_with_labels
+2025-05-09 10:21:01,033 — INFO — Closing down clientserver connection

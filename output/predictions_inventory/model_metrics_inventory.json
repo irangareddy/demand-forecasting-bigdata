@@ -1,0 +1,6 @@
+{
+    "accuracy": 0.9189,
+    "f1": 0.918,
+    "weightedPrecision": 0.9187,
+    "weightedRecall": 0.9189
+}

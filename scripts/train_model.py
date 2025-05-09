@@ -2,7 +2,6 @@ import os
 import logging
 import json
 from pyspark.sql import SparkSession
-from pyspark.sql.functions import col
 from pyspark.ml.feature import VectorAssembler, StringIndexer
 from pyspark.ml.regression import RandomForestRegressor
 from pyspark.ml.evaluation import RegressionEvaluator
@@ -34,14 +33,14 @@ log.info(f"Loaded features with {df.count()} rows")
 # ─────── ENCODE + VECTORIZE ───────
 indexer = StringIndexer(inputCol="Description", outputCol="DescriptionIndex")
 df = indexer.fit(df).transform(df)
-
 feature_cols = [
-    "prev_month_sales",
-    "rolling_3m_avg",
-    "Month",
-    "DescriptionIndex",
-    "is_holiday_month",
+    "prev_month_sales",  # retains lag signal
+    "sales_delta",  # better than Month
+    "rolling_3m_avg",  # strongest signal
+    "is_holiday_month",  # keep as binary context
+    "DescriptionIndex",  # keep for product-specific bias
 ]
+
 assembler = VectorAssembler(inputCols=feature_cols, outputCol="features")
 df = assembler.transform(df)
 
@@ -52,7 +51,7 @@ log.info(
 )
 
 # ─────── SETUP MODEL & GRID ───────
-rf = RandomForestRegressor(featuresCol="features", labelCol="TotalPrice")
+rf = RandomForestRegressor(featuresCol="features", labelCol="TotalPrice", maxBins=2048)
 
 paramGrid = (
     ParamGridBuilder()

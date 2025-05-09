@@ -5,3 +5,28 @@
 2025-05-09 06:26:43,952 — INFO — Transactions in holiday months: 0
 2025-05-09 06:26:44,118 — INFO — ✅ Top holiday products written to: output/seasonality/top_holiday_products
 2025-05-09 06:26:44,119 — INFO — Closing down clientserver connection
+2025-05-09 11:03:03,168 — INFO — Starting holiday product analysis
+2025-05-09 11:03:05,000 — INFO — Spark session started
+2025-05-09 11:03:07,747 — INFO — Loaded 1067371 transaction rows
+2025-05-09 11:03:07,748 — INFO — Closing down clientserver connection
+2025-05-09 11:04:21,137 — INFO — Starting holiday product analysis
+2025-05-09 11:04:22,429 — INFO — Spark session started
+2025-05-09 11:04:25,066 — INFO — Loaded 1067371 transaction rows
+2025-05-09 11:04:25,343 — INFO — Detected 12 unique holiday months
+2025-05-09 11:04:25,936 — INFO — Transactions in holiday months: 338786
+2025-05-09 11:04:26,829 — INFO — ✅ Top holiday products written to: output/seasonality/top_holiday_products
+2025-05-09 11:04:26,829 — INFO — Closing down clientserver connection
+2025-05-09 11:09:10,135 — INFO — Starting holiday product analysis
+2025-05-09 11:09:11,433 — INFO — Spark session started
+2025-05-09 11:09:13,882 — INFO — Loaded 1067371 transaction rows
+2025-05-09 11:09:14,147 — INFO — Detected 12 unique holiday months
+2025-05-09 11:09:14,775 — INFO — Transactions in holiday months: 338786
+2025-05-09 11:09:15,721 — INFO — ✅ Top holiday products written to: output/seasonality/top_holiday_products
+2025-05-09 11:09:15,721 — INFO — Closing down clientserver connection
+2025-05-09 11:11:17,044 — INFO — Starting holiday product analysis
+2025-05-09 11:11:18,343 — INFO — Spark session started
+2025-05-09 11:11:20,939 — INFO — Loaded 1067371 transaction rows
+2025-05-09 11:11:21,288 — INFO — Detected 12 unique holiday months
+2025-05-09 11:11:21,974 — INFO — Transactions in holiday months: 338786
+2025-05-09 11:11:22,869 — INFO — ✅ Top holiday products written to: output/seasonality/top_holiday_products
+2025-05-09 11:11:22,869 — INFO — Closing down clientserver connection

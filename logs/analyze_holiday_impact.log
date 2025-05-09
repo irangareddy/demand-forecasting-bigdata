@@ -32,3 +32,11 @@
 2025-05-09 06:28:34,401 — INFO — Non-null holiday matches: 10
 2025-05-09 06:28:34,824 — INFO — ✅ Holiday-wise sales impact written to: output/seasonality/holiday_impact
 2025-05-09 06:28:34,824 — INFO — Closing down clientserver connection
+2025-05-09 10:20:50,969 — INFO — Starting holiday impact analysis
+2025-05-09 10:20:52,247 — INFO — Spark session started
+2025-05-09 10:20:54,135 — INFO — Loaded features with 16575 rows
+2025-05-09 10:20:54,399 — INFO — Loaded holidays with 24 rows
+2025-05-09 10:20:54,869 — INFO — Joined dataset has 23080 rows
+2025-05-09 10:20:55,104 — INFO — Non-null holiday matches: 10
+2025-05-09 10:20:55,553 — INFO — ✅ Holiday-wise sales impact written to: output/seasonality/holiday_impact
+2025-05-09 10:20:55,553 — INFO — Closing down clientserver connection

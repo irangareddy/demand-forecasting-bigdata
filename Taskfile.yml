@@ -1,0 +1,79 @@
+version: '3'
+
+env:
+  DATA_PATH: "output"
+  SPARK_SERVICE: "spark"
+
+tasks:
+
+  # ────── DATA PREP ──────
+  clean-success:
+    desc: Remove _SUCCESS files
+    cmds:
+      - find {{.DATA_PATH}} -name '_SUCCESS' -delete
+      - echo "✅ Cleaned Spark _SUCCESS files"
+
+  # ────── FEATURE ENGINEERING ──────
+  spark:eda:
+    desc: Run EDA and aggregation
+    cmds:
+      - docker-compose run {{.SPARK_SERVICE}} python3 scripts/spark_eda.py
+
+  spark:features:
+    desc: Generate engineered features
+    cmds:
+      - docker-compose run {{.SPARK_SERVICE}} python3 scripts/spark_features.py
+
+  spark:nlp-cluster:
+    desc: Cluster descriptions using PySpark NLP
+    cmds:
+      - docker-compose run {{.SPARK_SERVICE}} python3 scripts/spark_nlp_clusters.py
+
+  # ────── MODELING ──────
+  train:regression:
+    desc: Train regression model
+    cmds:
+      - docker-compose run {{.SPARK_SERVICE}} python3 scripts/train_model.py
+
+  train:inventory:
+    desc: Train inventory classifier
+    cmds:
+      - docker-compose run {{.SPARK_SERVICE}} python3 scripts/train_inventory_model.py
+
+  # ────── ANALYSIS ──────
+  analyze:holidays:
+    desc: Analyze holiday impact
+    cmds:
+      - docker-compose run {{.SPARK_SERVICE}} python3 scripts/analyze_holiday_impact.py
+
+  analyze:products:
+    desc: Analyze top-selling products in holiday months
+    cmds:
+      - docker-compose run {{.SPARK_SERVICE}} python3 scripts/analyze_holiday_products.py
+
+  analyze:seasonality:
+    desc: Analyze quarterly and seasonal trends
+    cmds:
+      - docker-compose run {{.SPARK_SERVICE}} python3 scripts/analyze_seasonality.py
+
+  # ────── DASHBOARD ──────
+  run:dashboard:
+    desc: Launch Streamlit dashboard
+    cmds:
+      - streamlit run streamlit_app.py
+    dir: .
+    interactive: true
+
+  # ────── CLEANUP ──────
+  clean:orphan-containers:
+    desc: Remove docker orphan containers
+    cmds:
+      - docker-compose down --remove-orphans
+
+  all:train:
+    desc: Run all model training tasks
+    cmds:
+      - task: spark:features
+      - task: train:regression
+      - task: train:inventory
+    

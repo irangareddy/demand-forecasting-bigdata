@@ -1,7 +1,7 @@
 import os
 import logging
 from pyspark.sql import SparkSession
-from pyspark.sql.functions import col, avg, round, month, when, date_format
+from pyspark.sql.functions import col, avg, round, when, date_format
 
 # ─────── LOGGING SETUP ───────
 LOG_DIR = "logs"

@@ -8,3 +8,63 @@
 2025-05-09 04:52:02,296 — INFO — Saved output to output/top_product_monthly_sales
 2025-05-09 04:52:02,296 — INFO — ✅ Spark EDA script completed successfully
 2025-05-09 04:52:02,296 — INFO — Closing down clientserver connection
+2025-05-09 08:35:50,102 — INFO — Starting Spark EDA script
+2025-05-09 08:35:51,407 — INFO — Spark session started
+2025-05-09 08:35:54,094 — INFO — Loaded dataset with 1067371 rows
+2025-05-09 08:35:54,094 — INFO — Starting data cleaning
+2025-05-09 08:35:54,171 — INFO — Cleaning complete
+2025-05-09 08:35:54,172 — INFO — Selecting top 10 products by revenue
+2025-05-09 08:35:54,210 — INFO — Aggregating monthly sales per product
+2025-05-09 08:35:55,865 — INFO — Saved output to output/aggregated_sales_monthly
+2025-05-09 08:35:55,865 — INFO — ✅ Spark EDA script completed successfully
+2025-05-09 08:35:55,865 — INFO — Closing down clientserver connection
+2025-05-09 08:39:36,910 — INFO — Starting Spark EDA script
+2025-05-09 08:39:38,229 — INFO — Spark session started
+2025-05-09 08:39:40,661 — INFO — Loaded dataset with 1067371 rows
+2025-05-09 08:39:40,661 — INFO — Starting data cleaning
+2025-05-09 08:39:40,736 — INFO — Cleaning complete
+2025-05-09 08:39:40,736 — INFO — Selecting top 10 products by revenue
+2025-05-09 08:39:40,771 — INFO — Aggregating monthly sales per product
+2025-05-09 08:39:42,453 — INFO — Saved output to output/aggregated_sales_monthly
+2025-05-09 08:39:42,453 — INFO — ✅ Spark EDA script completed successfully
+2025-05-09 08:39:42,453 — INFO — Closing down clientserver connection
+2025-05-09 08:40:49,690 — INFO — Starting Spark EDA script
+2025-05-09 08:40:51,014 — INFO — Spark session started
+2025-05-09 08:40:53,464 — INFO — Loaded dataset with 1067371 rows
+2025-05-09 08:40:53,464 — INFO — Starting data cleaning
+2025-05-09 08:40:53,532 — INFO — Cleaning complete
+2025-05-09 08:40:53,532 — INFO — Selecting top 10 products by revenue
+2025-05-09 08:40:53,570 — INFO — Aggregating monthly sales per product
+2025-05-09 08:40:55,156 — INFO — Saved output to output/aggregated_sales_monthly
+2025-05-09 08:40:55,156 — INFO — ✅ Spark EDA script completed successfully
+2025-05-09 08:40:55,156 — INFO — Closing down clientserver connection
+2025-05-09 08:43:38,051 — INFO — Starting Spark EDA script
+2025-05-09 08:43:39,361 — INFO — Spark session started
+2025-05-09 08:43:41,815 — INFO — Loaded dataset with 1067371 rows
+2025-05-09 08:43:41,815 — INFO — Starting data cleaning
+2025-05-09 08:43:41,886 — INFO — Cleaning complete
+2025-05-09 08:43:41,887 — INFO — Selecting top 10 products by revenue
+2025-05-09 08:43:41,923 — INFO — Aggregating monthly sales per product
+2025-05-09 08:43:43,478 — INFO — Saved output to output/aggregated_sales_monthly
+2025-05-09 08:43:43,478 — INFO — ✅ Spark EDA script completed successfully
+2025-05-09 08:43:43,479 — INFO — Closing down clientserver connection
+2025-05-09 08:57:58,020 — INFO — Starting Spark EDA script
+2025-05-09 08:57:59,312 — INFO — Spark session started
+2025-05-09 08:58:01,964 — INFO — Loaded dataset with 1067371 rows
+2025-05-09 08:58:01,964 — INFO — Starting data cleaning
+2025-05-09 08:58:02,035 — INFO — Cleaning complete
+2025-05-09 08:58:02,035 — INFO — Selecting top 10 products by revenue
+2025-05-09 08:58:02,074 — INFO — Aggregating monthly sales per product
+2025-05-09 08:58:03,677 — INFO — Saved output to output/aggregated_sales_monthly
+2025-05-09 08:58:03,677 — INFO — ✅ Spark EDA script completed successfully
+2025-05-09 08:58:03,677 — INFO — Closing down clientserver connection
+2025-05-09 10:01:54,054 — INFO — Starting Spark EDA script
+2025-05-09 10:01:55,323 — INFO — Spark session started
+2025-05-09 10:01:57,714 — INFO — Loaded dataset with 1067371 rows
+2025-05-09 10:01:57,716 — INFO — Starting data cleaning
+2025-05-09 10:01:57,799 — INFO — Cleaning complete
+2025-05-09 10:01:57,800 — INFO — Selecting top 10 products by revenue
+2025-05-09 10:01:57,838 — INFO — Aggregating monthly sales per product
+2025-05-09 10:01:59,514 — INFO — Saved output to output/aggregated_sales_monthly
+2025-05-09 10:01:59,514 — INFO — ✅ Spark EDA script completed successfully
+2025-05-09 10:01:59,514 — INFO — Closing down clientserver connection

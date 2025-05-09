@@ -1,0 +1,56 @@
+# Bytecode and Python artifacts
+__pycache__/
+*.py[cod]
+*.egg
+*.egg-info/
+*.pyo
+*.pyd
+*.pkl
+*.log
+
+# Jupyter/IPython
+.ipynb_checkpoints/
+
+# Virtual environments
+.venv*/
+.env/
+*.env
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+
+# Streamlit cache
+.streamlit/config.toml
+.streamlit/secrets.toml
+
+# Docker
+*.pid
+*.sock
+
+# Spark output
+#output/*/part-*.csv
+output/*/_SUCCESS
+output/diagnostics/
+output/experiments/
+output/*.zip
+
+# Logs
+logs/*
+*.log
+
+# CSV experiment outputs
+scripts/output/
+
+# Model checkpoints (if any)
+checkpoints/
+models/
+
+# Misc
+*.bak
+*.tmp
+*.swp
