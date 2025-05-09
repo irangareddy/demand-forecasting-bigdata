@@ -1,0 +1,25 @@
+2025-05-09 06:42:44,238 — INFO — Starting training script
+2025-05-09 06:42:45,412 — INFO — Spark session started
+2025-05-09 06:42:47,196 — INFO — Loaded features with 190 rows
+2025-05-09 06:42:48,022 — INFO — Train: 136, Val: 32, Test: 22
+2025-05-09 06:42:50,162 — INFO — Closing down clientserver connection
+2025-05-09 06:42:50,163 — INFO — Closing down clientserver connection
+2025-05-09 06:42:50,163 — INFO — Model training and validation complete
+2025-05-09 06:42:50,254 — INFO — Test RMSE: 3786.44
+2025-05-09 06:42:50,254 — INFO — Test MAE: 2548.35
+2025-05-09 06:42:50,377 — INFO — Predictions written to output/predictions/
+2025-05-09 06:42:50,378 — INFO — Closing down clientserver connection
+2025-05-09 06:51:22,343 — INFO — Starting training script
+2025-05-09 06:51:23,965 — INFO — Spark session started
+2025-05-09 06:51:25,903 — INFO — Loaded features with 190 rows
+2025-05-09 06:51:26,675 — INFO — Train: 136, Val: 32, Test: 22
+2025-05-09 06:51:28,889 — INFO — Closing down clientserver connection
+2025-05-09 06:51:28,889 — INFO — Closing down clientserver connection
+2025-05-09 06:51:28,890 — INFO — Model training and validation complete
+2025-05-09 06:51:28,890 — INFO — Best numTrees: 20
+2025-05-09 06:51:28,890 — INFO — Best maxDepth: 10
+2025-05-09 06:51:28,988 — INFO — Test RMSE: 3087.35
+2025-05-09 06:51:28,988 — INFO — Test MAE: 2285.26
+2025-05-09 06:51:29,125 — INFO — Predictions written to output/predictions/
+2025-05-09 06:51:29,126 — INFO — 📊 Exported model metrics to: output/predictions/model_metrics.json
+2025-05-09 06:51:29,126 — INFO — Closing down clientserver connection

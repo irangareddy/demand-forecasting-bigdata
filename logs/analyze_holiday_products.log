@@ -1,0 +1,7 @@
+2025-05-09 06:26:39,199 — INFO — Starting holiday product analysis
+2025-05-09 06:26:40,905 — INFO — Spark session started
+2025-05-09 06:26:43,588 — INFO — Loaded 1067371 transaction rows
+2025-05-09 06:26:43,835 — INFO — Detected 1 unique holiday months
+2025-05-09 06:26:43,952 — INFO — Transactions in holiday months: 0
+2025-05-09 06:26:44,118 — INFO — ✅ Top holiday products written to: output/seasonality/top_holiday_products
+2025-05-09 06:26:44,119 — INFO — Closing down clientserver connection

@@ -1,0 +1,10 @@
+2025-05-09 04:51:56,284 — INFO — Starting Spark EDA script
+2025-05-09 04:51:58,135 — INFO — Spark session started
+2025-05-09 04:52:00,817 — INFO — Loaded dataset with 1067371 rows
+2025-05-09 04:52:00,817 — INFO — Starting data cleaning
+2025-05-09 04:52:00,890 — INFO — Cleaning complete
+2025-05-09 04:52:00,891 — INFO — Selecting top 10 products by revenue
+2025-05-09 04:52:00,927 — INFO — Aggregating monthly sales per product
+2025-05-09 04:52:02,296 — INFO — Saved output to output/top_product_monthly_sales
+2025-05-09 04:52:02,296 — INFO — ✅ Spark EDA script completed successfully
+2025-05-09 04:52:02,296 — INFO — Closing down clientserver connection

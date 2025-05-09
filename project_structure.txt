@@ -1,0 +1,56 @@
+.
+├── Dockerfile
+├── README.md
+├── data
+│   ├── online_retail_raw.csv
+│   └── public_holidays_uk_2009_2011.csv
+├── docker-compose.yml
+├── logs
+│   ├── analyze_holiday_impact.log
+│   ├── analyze_holiday_products.log
+│   ├── analyze_seasonality.log
+│   ├── spark_eda.log
+│   ├── spark_features.log
+│   └── train_model.log
+├── output
+│   ├── aggregated_sales_monthly
+│   │   ├── _SUCCESS
+│   │   └── part-00000-3845d992-320c-4bc0-8a5c-55152f9b8cd8-c000.csv
+│   ├── features
+│   │   ├── _SUCCESS
+│   │   └── part-00000-2ab62348-0fda-4140-ba43-3af6e7aaeeb4-c000.csv
+│   ├── predictions
+│   │   ├── _SUCCESS
+│   │   ├── model_metrics.json
+│   │   └── part-00000-20cd16c9-fd2f-47a5-9731-0dd442e06075-c000.csv
+│   └── seasonality
+│       ├── holiday_impact
+│       │   ├── _SUCCESS
+│       │   └── part-00000-68ede9c2-895c-4596-85d1-b3781fab9d51-c000.csv
+│       ├── newyear_vs_christmas
+│       │   ├── _SUCCESS
+│       │   └── part-00000-d707683a-ef80-4c9c-920b-06340852afd7-c000.csv
+│       ├── quarterly_summary
+│       │   ├── _SUCCESS
+│       │   └── part-00000-392fdea6-7d4e-4685-bfcc-3e5336764fae-c000.csv
+│       └── top_holiday_products
+│           ├── _SUCCESS
+│           └── part-00000-8c9e1239-efdf-458a-a7b2-ba265f364178-c000.csv
+├── project_structure.txt
+├── requirements.txt
+├── scripts
+│   ├── analyze_holiday_impact.py
+│   ├── analyze_holiday_products.py
+│   ├── analyze_seasonality.py
+│   ├── spark_eda.py
+│   ├── spark_features.py
+│   └── train_model.py
+├── src
+│   └── demand_forecasting
+│       ├── __init__.py
+│       └── io_utils.py
+├── streamlit_app.py
+└── tests
+    └── __init__.py
+
+16 directories, 38 files

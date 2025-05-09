@@ -1,0 +1,54 @@
+2025-05-09 04:54:05,689 — INFO — Starting Spark feature engineering script
+2025-05-09 04:54:06,872 — INFO — Spark session started
+2025-05-09 04:54:08,655 — INFO — Loaded aggregated data with 200 rows
+2025-05-09 04:54:09,054 — INFO — ✅ Feature set written to: output/features
+2025-05-09 04:54:09,054 — INFO — Closing down clientserver connection
+2025-05-09 05:54:29,429 — INFO — Starting Spark feature engineering script
+2025-05-09 05:54:31,138 — INFO — Spark session started
+2025-05-09 05:54:33,170 — INFO — Loaded aggregated data with 200 rows
+2025-05-09 05:54:33,478 — INFO — Closing down clientserver connection
+2025-05-09 05:55:03,872 — INFO — Starting Spark feature engineering script
+2025-05-09 05:55:05,150 — INFO — Spark session started
+2025-05-09 05:55:06,879 — INFO — Loaded aggregated data with 200 rows
+2025-05-09 05:55:07,159 — INFO — Closing down clientserver connection
+2025-05-09 05:55:36,762 — INFO — Starting Spark feature engineering script
+2025-05-09 05:55:37,930 — INFO — Spark session started
+2025-05-09 05:55:39,643 — INFO — Loaded aggregated data with 200 rows
+2025-05-09 05:55:39,916 — INFO — Closing down clientserver connection
+2025-05-09 05:56:53,359 — INFO — Starting Spark feature engineering script
+2025-05-09 05:56:54,521 — INFO — Spark session started
+2025-05-09 05:56:56,294 — INFO — Loaded aggregated data with 200 rows
+2025-05-09 05:56:56,593 — INFO — Closing down clientserver connection
+2025-05-09 05:57:10,037 — INFO — Starting Spark feature engineering script
+2025-05-09 05:57:11,200 — INFO — Spark session started
+2025-05-09 05:57:12,984 — INFO — Loaded aggregated data with 200 rows
+2025-05-09 05:57:13,271 — INFO — Closing down clientserver connection
+2025-05-09 06:32:12,054 — INFO — Starting Spark feature engineering script
+2025-05-09 06:32:13,221 — INFO — Spark session started
+2025-05-09 06:32:14,925 — INFO — Loaded aggregated data with 200 rows
+2025-05-09 06:32:15,199 — INFO — Closing down clientserver connection
+2025-05-09 06:34:10,659 — INFO — Starting Spark feature engineering script
+2025-05-09 06:34:11,820 — INFO — Spark session started
+2025-05-09 06:34:13,510 — INFO — Loaded aggregated data with 200 rows
+2025-05-09 06:34:14,078 — INFO — ✅ Feature set (with holiday flags) written to: output/features
+2025-05-09 06:34:14,078 — INFO — Closing down clientserver connection
+2025-05-09 06:36:21,403 — INFO — Starting Spark feature engineering script
+2025-05-09 06:36:22,560 — INFO — Spark session started
+2025-05-09 06:36:24,273 — INFO — Loaded aggregated data with 200 rows
+2025-05-09 06:36:24,846 — INFO — ✅ Feature set (with holiday flags) written to: output/features
+2025-05-09 06:36:24,847 — INFO — Closing down clientserver connection
+2025-05-09 06:36:54,226 — INFO — Starting Spark feature engineering script
+2025-05-09 06:36:55,393 — INFO — Spark session started
+2025-05-09 06:36:57,117 — INFO — Loaded aggregated data with 200 rows
+2025-05-09 06:36:57,696 — INFO — ✅ Feature set (with holiday flags) written to: output/features
+2025-05-09 06:36:57,696 — INFO — Closing down clientserver connection
+2025-05-09 06:38:32,586 — INFO — Starting Spark feature engineering script
+2025-05-09 06:38:33,749 — INFO — Spark session started
+2025-05-09 06:38:35,437 — INFO — Loaded aggregated data with 200 rows
+2025-05-09 06:38:36,154 — INFO — ✅ Feature set (with holiday flags) written to: output/features
+2025-05-09 06:38:36,154 — INFO — Closing down clientserver connection
+2025-05-09 06:54:36,962 — INFO — Starting Spark feature engineering script
+2025-05-09 06:54:38,135 — INFO — Spark session started
+2025-05-09 06:54:39,869 — INFO — Loaded aggregated data with 200 rows
+2025-05-09 06:54:40,575 — INFO — ✅ Feature set (with holiday flags) written to: output/features
+2025-05-09 06:54:40,575 — INFO — Closing down clientserver connection

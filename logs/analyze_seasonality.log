@@ -1,0 +1,12 @@
+2025-05-09 05:55:55,303 — INFO — Starting seasonality analysis
+2025-05-09 05:55:56,484 — INFO — Spark session started
+2025-05-09 05:55:58,239 — INFO — Loaded features with 190 rows
+2025-05-09 05:55:58,745 — INFO — ✅ Quarterly demand summary written to: output/seasonality/quarterly_summary
+2025-05-09 05:55:59,003 — INFO — ✅ New Year vs Christmas summary written to: output/seasonality/newyear_vs_christmas
+2025-05-09 05:55:59,004 — INFO — Closing down clientserver connection
+2025-05-09 07:26:39,555 — INFO — Starting seasonality analysis
+2025-05-09 07:26:41,392 — INFO — Spark session started
+2025-05-09 07:26:43,369 — INFO — Loaded features with 190 rows
+2025-05-09 07:26:43,822 — INFO — ✅ Quarterly demand summary written to: output/seasonality/quarterly_summary
+2025-05-09 07:26:44,085 — INFO — ✅ Year-wise New Year vs Christmas summary written to: output/seasonality/newyear_vs_christmas
+2025-05-09 07:26:44,085 — INFO — Closing down clientserver connection

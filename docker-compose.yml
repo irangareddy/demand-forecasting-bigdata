@@ -1,0 +1,15 @@
+services:
+  spark:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./src:/app/src
+      - ./scripts:/app/scripts
+      - ./data:/app/data
+      - ./logs:/app/logs        # ✅ mount logs folder
+      - ./output:/app/output    # ✅ also mount output folder
+    working_dir: /app
+    environment:
+      - PYSPARK_PYTHON=python3
+    command: bash

@@ -1,0 +1,8 @@
+{
+    "RMSE": 3087.35,
+    "MAE": 2285.26,
+    "Best Hyperparameters": {
+        "numTrees": 20,
+        "maxDepth": 10
+    }
+}

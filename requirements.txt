@@ -1,0 +1,5 @@
+pyspark
+numpy
+pandas
+streamlit
+plotly>=5.18.0
