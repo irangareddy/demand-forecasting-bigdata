@@ -1,150 +1,78 @@
-Absolutely! Here's your `README.md` content rewritten in a **clean, Obsidian-friendly format** — using simple Markdown, clear sections, and collapsible bullets where useful.
-
----
-
-````markdown
 # 🛍️ Retail Demand Forecasting using Spark + Streamlit
 
-This project implements a big data pipeline for **retail demand forecasting** using PySpark and MLlib, and visualizes results using Streamlit. It forecasts product-level monthly sales and analyzes holiday-driven demand shifts.
+This project builds a scalable pipeline for **product-level demand forecasting** and **inventory recommendation** using PySpark, MLlib, and Streamlit. It processes over 1M transactions and reveals sales patterns around holidays, seasons, and product trends.
 
 ---
 
-## 📦 Project Overview
+## 🧭 Project Narrative
 
-This pipeline processes over **1 million transaction records**, filters, aggregates, models, and visualizes them. It’s designed for scalability, interpretability, and modularity.
+> How can a retailer avoid stockouts and overstock — especially during seasonal spikes?
 
-### 💡 Problem Statement
+We explored 1M+ UK retail transactions across 2 years and built:
 
-> Predict future product-level demand to support better inventory management and uncover sales patterns around holidays and seasons.
+* 📈 A product-month demand forecasting model (Random Forest, RMSE \~\$421)
+* 📦 A classifier that predicts whether to **Increase**, **Maintain**, or **Reduce** stock (92% accuracy)
+* 🎯 Insights about **holiday impact** and **seasonal trends**
+
+---
+
+## 💡 Problem Statement
+
+> Predict monthly sales and recommend inventory actions per product by learning from past sales, seasonality, and public holiday effects.
 
 ---
 
 ## 🔧 Tech Stack
 
-- `PySpark` – ETL, feature engineering, MLlib modeling  
-- `Pandas` – helper logic for EDA and visualization  
-- `Streamlit` – interactive visualization dashboard  
-- `Docker` – reproducible environment for all components
+* `PySpark` – Big data processing + MLlib modeling
+* `Pandas` – Local EDA + metric summaries
+* `Streamlit` – Dashboard UI for business users
+* `Docker + Taskfile` – Reproducible build + run steps
 
 ---
 
-## 📂 Folder Structure
+## 📁 Folder Layout
 
-```text
-data/
-  ├── online_retail_raw.csv
-  └── public_holidays_uk_2009_2011.csv
-
-scripts/
-  ├── spark_eda.py
-  ├── spark_features.py
-  ├── train_model.py
-  ├── analyze_holiday_impact.py
-  ├── analyze_holiday_products.py
-  └── analyze_seasonality.py
-
-output/
-  ├── aggregated_sales_monthly/
-  ├── features/
-  ├── predictions/
-      └── model_metrics.json
-  └── seasonality/
-      ├── holiday_impact/
-      ├── newyear_vs_christmas/
-      ├── quarterly_summary/
-      └── top_holiday_products/
-
-streamlit_app.py
-README.md
-requirements.txt
-````
-
----
-
-## 🧪 Pipeline Steps
-
-1. **EDA & Cleaning**
-
-   * Removes returns/cancellations
-   * Drops null `CustomerID`, invalid quantities/prices
-
-2. **Aggregation**
-
-   * Monthly product-level aggregation
-   * Focus on top-selling SKUs
-
-3. **Feature Engineering**
-
-   * Lags (prev month), rolling avg (3m), time flags
-   * Public holiday flag from UK dataset
-
-4. **Modeling**
-
-   * RandomForestRegressor via PySpark MLlib
-   * Grid-tuned `numTrees` and `maxDepth`
-   * Validation set used for hyperparameter selection
-
-5. **Seasonal & Holiday Analysis**
-
-   * Holiday-driven product insights
-   * Quarterly seasonality
-   * New Year vs. Christmas comparison
-
----
-
-## 📈 Dashboard (Streamlit)
-
-Launch with:
-
-```bash
-streamlit run streamlit_app.py
 ```
-
-### Key Sections:
-
-* **📊 Model Summary**
-
-  * RMSE, MAE, Best Parameters
-* **🔮 Forecast Explorer**
-
-  * Actual vs Predicted
-  * Filter by product
-* **🎁 Holiday Products**
-
-  * Bar chart: top SKUs during public holidays
-* **📆 Quarterly Trends**
-
-  * Avg sales per product by Q1–Q4
-* **🎄 Holiday Comparison**
-
-  * Dec vs Jan sales for seasonal items
-* **🏆 Holiday Impact**
-
-  * Which holidays align with highest sales?
-
----
-
-## 🧪 Example: `model_metrics.json`
-
-```json
-{
-  "RMSE": 3087.35,
-  "MAE": 2285.26,
-  "Best Hyperparameters": {
-    "numTrees": 20,
-    "maxDepth": 10
-  }
-}
+data/                          → raw retail & holiday data  
+scripts/                       → Spark jobs & analysis scripts  
+output/                        → Model inputs, predictions, metrics  
+streamlit_app.py               → Interactive forecast dashboard  
+Taskfile.yml                   → Run pipeline with `task all:train`  
 ```
 
 ---
 
-## 🧠 Key Insights
+## 📈 Dashboard Sections (Narrative-Driven)
 
-* Products like **Christmas kits and buntings** peak in Nov/Dec
-* **Substitute holidays** (e.g., post-Boxing Day) drive more revenue than Christmas itself
-* Holiday-aware features didn’t reduce error significantly, but added interpretability
-* Model performs best on stable SKUs and struggles with seasonal volatility
+| Section                      | What It Answers                          |
+| ---------------------------- | ---------------------------------------- |
+| 🧭 Intro                     | Why forecasting matters                  |
+| 🔮 Product Forecast Explorer | What future sales look like              |
+| 🎁 Holiday Products          | What sells best during holidays          |
+| 📆 Quarterly Trends          | When each product peaks                  |
+| 🎄 Holiday Comparison        | Is New Year beating Christmas?           |
+| 🏆 Holiday Impact            | Which holidays actually move revenue?    |
+| 📦 Inventory Classifier      | What stock action to take (92% accuracy) |
+
+---
+
+## 🧪 Modeling Pipeline
+
+1. **`spark_eda.py`** – Cleans raw transactions and monthly aggregates
+2. **`spark_features.py`** – Adds lag, rolling avg, sales\_delta, holiday flags
+3. **`train_model.py`** – Trains RandomForestRegressor (uses `TrainValidationSplit`)
+4. **`train_inventory_model.py`** – Trains classifier on stock\_decision (accuracy \~92%)
+5. **`analyze_*.py` scripts** – Seasonal + holiday trends
+
+---
+
+## 📊 Key Results
+
+* 🔁 Regression RMSE: **\$421.12**, MAE: **\$174.21**
+* 📦 Classifier Accuracy: **91.89%**
+* 🏆 Spring Bank Holiday outperformed Christmas in revenue
+* 🎄 January sales exceeded December in some years
 
 ---
 
@@ -153,15 +81,62 @@ streamlit run streamlit_app.py
 ```bash
 docker-compose build
 
-# Spark scripts
-docker-compose run spark python3 scripts/spark_eda.py
-docker-compose run spark python3 scripts/spark_features.py
-docker-compose run spark python3 scripts/train_model.py
-docker-compose run spark python3 scripts/analyze_holiday_impact.py
-docker-compose run spark python3 scripts/analyze_holiday_products.py
-docker-compose run spark python3 scripts/analyze_seasonality.py
+# Feature generation & modeling
+task spark:eda
+task spark:features
+task train:regression
+task train:inventory
 
-# Streamlit
-streamlit run streamlit_app.py
+# Exploratory analysis
+task analyze:holidays
+task analyze:products
+task analyze:seasonality
+
+# Streamlit dashboard
+task serve
 ```
+
 ---
+
+## 📁 Sample Output
+
+`model_metrics.json`:
+
+```json
+{
+  "RMSE": 421.12,
+  "MAE": 174.21,
+  "Best Hyperparameters": {
+    "numTrees": 10,
+    "maxDepth": 10
+  }
+}
+```
+
+`model_metrics_inventory.json`:
+
+```json
+{
+  "accuracy": 0.9189,
+  "f1": 0.9176,
+  "weightedPrecision": 0.9200,
+  "weightedRecall": 0.9189
+}
+```
+
+---
+
+## 🧠 Lessons Learned
+
+* Demand varies significantly by product and season — models need **context-aware features**
+* Holidays like **Substitute Boxing Day** and **Spring Bank** matter more than expected
+* Class imbalance and label encoding can silently impact classifiers — verify them visually
+* Small MAE at the global level can hide **high variance at product level** → use product-specific MAE
+
+---
+
+## 📦 Future Enhancements
+
+* Use **Word2Vec / BERT** embeddings for product names
+* Extend pipeline for **weekly forecasts** or **real-time Kafka integration**
+* Add **profit-aware recommendations** (margin × demand × inventory)
