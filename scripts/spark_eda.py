@@ -48,7 +48,7 @@ df_clean = (
 log.info("Cleaning complete")
 
 # ─────── TOP PRODUCTS ───────
-log.info("Selecting top 10 products by revenue")
+log.info("Selecting top 1000 products by revenue")
 top_products = (
     df_clean.groupBy("Description")
     .agg(spark_sum("TotalPrice").alias("Revenue"))
