@@ -89,13 +89,13 @@ if metrics:
     with col1:
         st.metric(
             "📉 RMSE (Root Mean Square Error)",
-            f"${metrics['RMSE']:,.2f}",
+            f"£{metrics['RMSE']:,.2f}",
             help="Lower is better – penalizes large errors",
         )
     with col2:
         st.metric(
             "📏 MAE (Mean Absolute Error)",
-            f"${metrics['MAE']:,.2f}",
+            f"£{metrics['MAE']:,.2f}",
             help="Average absolute difference between predicted and actual sales",
         )
     with col3:
@@ -114,12 +114,21 @@ st.caption(
     "This section lets you explore product-level sales forecasts month by month. The model uses past sales, seasonality, and holiday impact to predict demand."
 )
 
+# Update the product selection to only show the specified products
+allowed_products = [
+    "12 PENCILS SMALL TUBE SKULL",
+    "CHILDREN'S APRON DOLLY GIRL",
+    "PAINTED METAL PEARS ASSORTED",
+    "WOODLAND CHARLOTTE BAG",
+    "LUNCH BOX I LOVE LONDON"
+]
+
 if not df_preds.empty:
     col1, col2 = st.columns([1, 2])
     with col1:
         product = st.selectbox(
             "🛒 Select a product",
-            df_preds["Description"].unique(),
+            [p for p in df_preds["Description"].unique() if p in allowed_products],
             help="Choose a product to view actual vs predicted sales",
         )
         date_range = st.date_input(
@@ -155,7 +164,7 @@ if not df_preds.empty:
     fig.update_layout(
         title=f"Sales Forecast for '{product}'",
         xaxis_title="Month",
-        yaxis_title="Sales Amount ($)",
+        yaxis_title="Sales Amount (£)",
         hovermode="x unified",
         showlegend=True,
         height=500,
@@ -167,7 +176,7 @@ if not df_preds.empty:
     mae = abs(filtered_preds["TotalPrice"] - filtered_preds["prediction"]).mean()
     st.metric(
         "📏 Product-specific MAE",
-        f"${mae:,.2f}",
+        f"£{mae:,.2f}",
         help="Mean Absolute Error for this specific product's forecast",
     )
 else:
@@ -218,7 +227,7 @@ if (
         x="Description",
         y="total_sales",
         title="Top Selling Products During Holiday Season",
-        labels={"total_sales": "Total Sales ($)", "Description": "Product"},
+        labels={"total_sales": "Total Sales (£)", "Description": "Product"},
         color="total_sales",
         color_continuous_scale="Sunsetdark",
     )
@@ -280,13 +289,20 @@ if not df_newyear_vs_christmas.empty:
     df_newyear_vs_christmas.columns = df_newyear_vs_christmas.columns.str.strip()
     df_newyear_vs_christmas["Year"] = df_newyear_vs_christmas["Year"].astype(str)
 
+    # Define allowed products for comparison
+    allowed_products = [
+        "ASSORTED COLOUR BIRD ORNAMENT",
+        "PARTY BUNTING",
+        "POSTAGE"
+    ]
+
     if (
         "Description" in df_newyear_vs_christmas.columns
         and df_newyear_vs_christmas["Description"].nunique() > 1
     ):
         product = st.selectbox(
             "🛍️ Select a product to compare",
-            df_newyear_vs_christmas["Description"].unique(),
+            [p for p in df_newyear_vs_christmas["Description"].unique() if p in allowed_products],
             key="nyc_product",
         )
         df_plot = df_newyear_vs_christmas[
@@ -308,7 +324,7 @@ if not df_newyear_vs_christmas.empty:
         barmode="group",
         text="avg_monthly_sales",
         labels={
-            "avg_monthly_sales": "Average Monthly Sales ($)",
+            "avg_monthly_sales": "Average Monthly Sales (£)",
             "Year": "Year",
             "MonthLabel": "Holiday",
         },
@@ -345,7 +361,7 @@ if not df_holiday_impact.empty:
         x="Name",
         y="avg_sales",
         title="📊 Average Monthly Sales by Holiday",
-        labels={"avg_sales": "Average Sales ($)", "Name": "Holiday"},
+        labels={"avg_sales": "Average Sales (£)", "Name": "Holiday"},
         color="avg_sales",
         color_continuous_scale="Tealgrn",
     )
